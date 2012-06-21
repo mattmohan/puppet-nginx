@@ -37,7 +37,7 @@ define nginx::fcgi::site(
   $root,
   $fastcgi_pass,
   $ensure              = 'present',
-  $index               = 'index.php',
+  $index               = 'index.html index.php /index.php',
   $include             = '',
   $listen              = '80',
   $server_name         = undef,
