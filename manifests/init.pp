@@ -23,9 +23,8 @@ class nginx {
   $nginx_includes = '/etc/nginx/includes'
   $nginx_conf = '/etc/nginx/conf.d'
 
-  $nginxversion = $nginxversion ? {
-    undef => '1.0.0',
-    default => $nginxversion
+  if !$nginxversion {
+  	$nginxversion = '1.0.0'
   }
 
   $real_nginx_user = $::nginx_user ? {
